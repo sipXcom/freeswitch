@@ -114,6 +114,40 @@ set_fs_ver () {
       configure.ac > configure.ac.$$
       mv configure.ac.$$ configure.ac
   fi
+<<<<<<< HEAD
+=======
+
+  local rpm_version
+  if [ -n "$rev" ]; then
+    rpm_version="$major.$minor.$micro.$rev"
+  else
+    rpm_version="$major.$minor.$micro"
+  fi
+
+  sed -e "s|\(%define version \).*|\1$rpm_version|"  \
+       freeswitch.spec > freeswitch.spec.$$
+  mv freeswitch.spec.$$ freeswitch.spec
+
+  sed -e "s|\(%define version \).*|\1$rpm_version|"  \
+       freeswitch-config-rayo.spec > freeswitch-config-rayo.spec.$$
+  mv freeswitch-config-rayo.spec.$$ freeswitch-config-rayo.spec
+
+#%define version 1.5.16
+
+>>>>>>> FS-7273 Add support for build server to optionally specify revision when packaging RPM. common.sh optionally accepts revision number and sets version in freeswitch-config-rayo.spec config-rayo.sh updated to be consistent with rpmbuilder.sh rpmbuilder.sh optionally accepts revision number src_tarball.sh will now produce freeswitch.spec and freeswitch-config-rayo.spec as artifacts.
+}
+
+set_fs_release () {
+  local release="$1"
+  if [ -n "$release" ]; then
+    sed -e "s|\(%define release \).*|\1$release|"  \
+         freeswitch.spec > freeswitch.spec.$$
+    mv freeswitch.spec.$$ freeswitch.spec
+
+    sed -e "s|\(%define release \).*|\1$release|"  \
+         freeswitch-config-rayo.spec > freeswitch-config-rayo.spec.$$
+    mv freeswitch-config-rayo.spec.$$ freeswitch-config-rayo.spec
+  fi
 }
 
 gnuize () {
