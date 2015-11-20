@@ -54,6 +54,13 @@ install:
 	@echo " +       Install/Re-install default config:        +"
 	@echo " +       ----------------------------------        +"
 	@echo " +               $(MK) samples                     +"
+if KNOWN_INIT
+	@echo " +                                                 +"
+	@echo " +       Install startup scripts:                  +"
+	@echo " +       ------------------------                  +"
+	@echo " +                                                 +"
+	@echo " +       build/startup/install_systemd.sh          +"
+endif
 	@echo " +                                                 +"
 	@echo " +                                                 +"
 	@echo " +       Additional resources:                     +"
