@@ -47,8 +47,8 @@
 %{?with_mod_esl:%define build_mod_esl 1 }
 %{?with_mod_shout:%define build_mod_shout 1 }
 
-%define version %{VERSION_NUMBER}
-%define release %{BUILD_NUMBER}
+%define version 1.6.0
+%define release 1
 
 ######################################################################################################################
 #
@@ -106,7 +106,7 @@ Summary:      	FreeSWITCH open source telephony platform
 License:      	MPL1.1
 Group:        	Productivity/Telephony/Servers
 Version:	%{version}
-Release:	%{release}
+Release:	%{release}%{?dist}
 URL:          	http://www.freeswitch.org/
 Packager:     	Ken Rice
 Vendor:       	http://www.freeswitch.org/
