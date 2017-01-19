@@ -121,7 +121,7 @@ docker run -d --name="FSContainer"  -v /usr/share:/usr/share -v /var/:/var/  -v 
 ```
 
 Note:
-> This is a complete dockerized FS image that you can use it as you like, above example is used as PoC in  SipXcom Unified Communication server where FS is used as mediaserver
+>> This is a complete dockerized FS image that you can use it as you like, above example is used as PoC in  SipXcom Unified Communication server where FS is used as mediaserver
 
 
 
