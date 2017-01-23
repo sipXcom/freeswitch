@@ -1,6 +1,6 @@
 # **DockerizedFreeswitch**
 
-Since containerization and microservices seems to be the way to got in future software production, I’ve decided to take a look at our current sipxcom/uniteme platform and find a way to implement this concept with no core code change.
+Since containerization and microservices seems to be the way to got in future software production, I’ve decided to take a look at our current sipxcom/uniteme platform and find a way to implement this concept with no core code change(hopefully).
 
 Dockerization of one service from our enterprise platform without touching the code will require to move that service from init.d  to a container running over docker daemon according to the next figure:
 
