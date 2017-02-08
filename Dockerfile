@@ -1,7 +1,7 @@
 FROM centos:6.8
 MAINTAINER Mihai <costache.mircea.mihai@gmail.com>
 
-ADD sipxecs.repo /etc/yum.repos.d/
+ADD sipxcom.repo /etc/yum.repos.d/
 RUN yum install -y freeswitch* && rm -f /etc/yum.repos.d/sipxecs.repo && yum clean all && rm -rf /var/cache/yum/x86_64/6/sipxecs
 
 VOLUME ["/etc/sipxpbx/freeswitch", "/var/sipxdata/tmp/freeswitch", "/var/log/sipxpbx/freeswitch", "/var/run/sipxpbx/freeswitch"]
