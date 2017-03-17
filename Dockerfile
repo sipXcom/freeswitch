@@ -8,5 +8,5 @@ VOLUME ["/etc/sipxpbx/freeswitch", "/var/sipxdata/tmp/freeswitch", "/var/log/sip
 
 EXPOSE 8084 8031 8021 15060 8184 8284
 EXPOSE 11000-12999
-
+RUN rm -rf /etc/yum.repos.d/sipxcom.repo && yum clean all && rm -rf /var/cache/yum/x86_64/*
 CMD freeswitch -nonat -conf /etc/sipxpbx/freeswitch/conf -db /var/sipxdata/tmp/freeswitch -log /var/log/sipxpbx/freeswitch -run /var/run/sipxpbx -htdocs /etc/sipxpbx/freeswitch/conf/htdoc
